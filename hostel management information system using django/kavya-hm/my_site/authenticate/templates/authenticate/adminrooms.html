@@ -1,0 +1,111 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+    <title>Availability of rooms</title>
+    <style>
+        
+       #hostel{
+  font-family:  sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#hostel td, #hostel th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+h4{
+    color:black;
+}
+h4 :hover{
+    background-color: #ddd;
+}
+#hostel tr:nth-child(even){background-color:cream;}
+
+#hostel tr:hover {background-color: #ddd;}
+
+#hostel th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:blue;
+  color: white;
+}
+</style>
+</head>
+<body>
+<head>
+    <title>Availability of rooms</title>
+    <style>
+        
+h5{color:white;
+background-color:black;
+width:6cm;
+}
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+.demo
+{
+background-color : white;
+}
+ .trail{
+        color:blue;
+        background-color:white ;
+      }
+      tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+ </style>
+   
+</head>
+<body>
+    <br>
+    
+    <center>
+    
+       <h3> <a href="{% url 'adminloginhome'%}" class="btn-secondary" >ProfileHome</a></h3>
+        <h4><b>Availability of rooms</b></h4>
+        <div class ="trail">
+<marquee behavior="scroll" direction="right"><b>Here is the list of availablity of rooms of our hostel</b> </marquee>
+</div>
+    <div class="demo">
+    <table border ="2" id="hostel">
+        <tr>
+            <th> Block_no</th>
+            <th>Room_no </th>
+            <th>available_persons </th>
+            <th>room_type  </th>
+            <th> vacancy </th>
+            <th> price</th>
+            </tr>
+            {% for  datas in Availability_room %}
+            <tr>
+                <td><b>{{datas.Block_no}}</b></td>
+                <td><b>{{datas.Room_no }}</b></td>
+                <td><b>{{datas.available_persons }}</b></td>
+                <td><b>{{datas.room_type   }}</b></td>
+                <td><b>{{datas.vacancy}}</b></td>
+                <td><b>{{datas.price }}</b></td>
+               
+            </tr>
+                 {% endfor %}
+    </table>
+    </div>
+    <br>
+    <h5>Do you want add  rooms<a href="{% url 'addingrooms'%}"class="btn btn-secondary">Add_room</a></h5> 
+</center>
+  
+</body>
+</html>
+{% endblock %}

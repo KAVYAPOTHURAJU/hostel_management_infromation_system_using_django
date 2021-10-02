@@ -1,0 +1,161 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+   body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  height:130vh;
+  background-size:cover;
+  background-position:center;
+}
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+}
+.image img{
+	float:left;
+	width:250px;
+	height:150px;
+	border-radius: 10px;
+	border: 1px solid #021a40;
+}
+.image{
+	position: absolute;
+	top:60%;
+	left:10%;
+	transform: translate(-50px,-50px);
+}
+.image{
+	width:70%;
+	margin:10px auto 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+	grid-gap:30px;
+}
+.image img:hover{
+    transform:scale(0.9);
+    box-shadow:0 32px 75px rgba(68, 77, 136,0.2 );
+    transition: 0.6s ease;
+}
+.image2 img{
+	float-left;
+	width:250px;
+	height:150px;
+	border-radius: 8px;
+}
+.image2{
+	position:absolute;
+	top:110%;
+	left:42%;
+	transform: translate(-50%,-50%);
+}
+.image2{
+	width:70%;
+	margin:10px auto 50px;
+	display:grid;
+	grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+	grid-gap:30px;
+}
+.image2 img:hover{
+	transform: scale(0.9);
+	box-shadow: 0 32px 75px rgba(68,77,136,0.2);
+	transition: 0.6s ease;
+}
+.main{
+	max-width: 1200px;
+	margin: auto;
+}
+.button{
+	position: absolute;
+	top:90%;
+	left:12%;
+	transform: translate(-50px,-50px);
+
+}
+.btn{
+	border: 2px solid #000;
+	padding:10px 30px;
+	color:#000;
+	text-decoration: none;
+	transition: 0.6s ease;
+}
+.btn:hover{
+    background-color: #000;
+    color:#fff;
+}
+.button2{
+	position: absolute;
+	top:130%;
+	left:39%;
+	transform: translate(-50%,-50%);
+  }
+.btn2{
+	border:2px solid #000;
+	padding:10px 30px;
+	color:#000;
+	text-decoration: none;
+	transition: 0.6s ease;
+}
+.btn2:hover{
+	background-color: #000;
+	color:#fff;
+}
+   img{
+ border: 3px solid #555;
+}
+</style>
+</head>
+<body>
+  <center>
+    <h2>Admin actions</h2>
+    {% if user.is_authenticated %}
+    <h3>Hello ,{{user.username}}</h3>
+    {% endif %}
+  
+    <a class="btn btn-secondary" href="{% url 'index' %}">Logout</a>
+    <br> <br>
+	<div class="main">
+		<div class="title">
+
+		<div class="image">
+		   <img src="https://cdn.glitch.com/544df181-59ed-4e05-9213-3882ba6e2ea5%2FWhatsApp%20Image%202021-07-26%20at%209.01.08%20PM%20(1).jpeg?v=1627316185456"/>
+           <img src="https://cdn.glitch.com/544df181-59ed-4e05-9213-3882ba6e2ea5%2FWhatsApp%20Image%202021-07-26%20at%209.01.07%20PM.jpeg?v=1627316121732"/>
+           <img src="https://cdn.glitch.com/544df181-59ed-4e05-9213-3882ba6e2ea5%2FWhatsApp%20Image%202021-07-26%20at%209.01.21%20PM.jpeg?v=1627316543659"/>
+       </div>
+       <div class="image2">
+       	<img src="https://cdn.glitch.com/544df181-59ed-4e05-9213-3882ba6e2ea5%2FWhatsApp%20Image%202021-07-26%20at%209.01.04%20PM.jpeg?v=1627316075291"/>
+       	<img src="https://cdn.glitch.com/544df181-59ed-4e05-9213-3882ba6e2ea5%2FWhatsApp%20Image%202021-07-26%20at%209.01.08%20PM.jpeg?v=1627316151341"/>
+       	<img src="https://cdn.glitch.com/544df181-59ed-4e05-9213-3882ba6e2ea5%2FWhatsApp%20Image%202021-07-26%20at%209.01.06%20PM.jpeg?v=1627316099577"/>
+       </div>
+	
+	</div>
+  
+		<div class="button">
+
+		    <a href="{% url 'adminrooms'%} " class="btn"  style="border-radius: 10px;    background-color:#82CAFF;" ><b>Available Rooms list</b></a>
+		    &#8287;  &#8287;  &#8287;  &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287;  &#8287; &#8287; &#8287; &#8287; &#8287; &#8287;  &#8287;   &#8287;  &#8287; 
+		    <a href="{% url 'bookingdetails'%}" class="btn"  style="border-radius: 10px;  margin-right:1px; background-color:#82CAFF;"><b>Booking details</b></a>
+		    &#8287;  &#8287; &#8287;  &#8287; &#8287;  &#8287; &#8287;&#8287;&#8287;&#8287;&#8287; &#8287;&#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287;
+		    <a href="{% url 'adminpaymentview'%}" class="btn"  style="border-radius: 10px;  margin-right:1px; background-color:#82CAFF;"><b>Payment details </b></a>
+		</div>
+    <hr/>
+        <div class="button2">
+     
+		    <a href="{% url 'adminoutingandcomments' %}" class="btn2"  style="border-radius: 10px; background-color:#82CAFF;"><b>Student Requests </b></a>
+		    &#8287;  &#8287;  &#8287; &#8287;  &#8287; &#8287; &#8287;  &#8287;     &#8287; &#8287; &#8287; &#8287; &#8287;  &#8287;   &#8287; &#8287;&#8287;&#8287; &#8287; 
+		    <a href="{% url 'studentinfo'%}" class="btn2" style="border-radius: 10px;margin-right: 1px; background-color:#82CAFF;"><b>Student details</b></a>
+		    &#8287;  &#8287; &#8287; &#8287; &#8287; &#8287; &#8287;  &#8287; &#8287;   &#8287; &#8287;  &#8287;   &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287; &#8287;  &#8287; &#8287; &#8287; &#8287;   &#8287; &#8287;  
+		    <a href="{% url 'wardenreq'%}" class="btn2" style="border-radius: 10px;margin-right:1px; background-color:#82CAFF;"><b>Contact</b></a>
+		</div>
+  </center>
+ 
+	</body>
+
+	</html>
+  
+{% endblock %}

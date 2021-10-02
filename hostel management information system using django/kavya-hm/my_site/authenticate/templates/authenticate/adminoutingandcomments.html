@@ -1,0 +1,239 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+    <title>Outing response form </title>
+    <style>
+#hostel{
+  font-family:  sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#hostel td, #hostel th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+h4{
+    color:black;
+}
+h4 :hover{
+    background-color: #ddd;
+}
+#hostel tr:nth-child(even){background-color:cream;}
+
+#hostel tr:hover {background-color: #ddd;}
+
+#hostel th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:blue;
+  color: white;
+}
+
+
+    <title>Availability of rooms</title>
+    <style>
+        
+
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+    background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+
+ .trail{
+        color:blue;
+        background-color:white ;
+      }
+      tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+        tr:nth-child(odd) {
+			background-color:whitesmoke;
+		}
+        h3.h5{
+            color:white;
+        }
+        #demo{
+            color:white;
+        background-color:blue ;
+        width:29.3cm;
+       height: 1cm;
+       text-align: center;
+        }
+        #demos{
+            color:white;
+        background-color:blue ;
+        width:34.5cm;
+       height: 1cm;
+       text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <br><br><br>
+   
+  
+   
+
+    <center>
+        
+        <h3> <a href="{% url 'adminloginhome'%}" class="btn-secondary" >ProfileHome</a></h3>
+         
+        <div id ="demos" >
+           
+            <marquee behavior="scroll" direction="right"><b>Outing form requests</b> </marquee>
+          
+        </div>
+        <table border ="2" id="hostel">
+     
+        <tr >
+            
+            <th>Username </th>
+            <th> Email </th>
+            <th>Room_no</th>
+            <th>Block_no</th>
+            <th>checkOut</th>
+            <th>checkIn</th>
+            <th>Purpose</th>
+            <th>StudentPhonenumber</th>
+            <th>Parentname</th>
+            <th>ParentPhonenumber</th>
+            <th>Approval</th>
+
+            </tr>
+            {% for  res in OutingFormforstudents %}
+            <tr>
+                <td><b>{{res.Username}}</b></td>
+                <td><b>{{res.Email }}</b></td>
+                <td><b>{{res.Room_no }}</b></td>
+                <td><b>{{res.Block_no }}</b></td>
+                <td><b>{{res.checkOut }}</b></td>
+                <td><b>{{res.checkIn }}</b></td>
+                <td><b>{{res.Purpose}}</b></td>
+                <td><b>{{res.StudentPhonenumber}}</b></td>
+                <td><b>{{res.Parentname}}</b></td>
+                <td><b>{{res.ParentPhonenumber}}</b></td>
+                <td><b>{{res.Approval }}</b></td>
+            </tr>
+             {% endfor %}    
+    </table>
+    <a href="http://127.0.0.1:8000/admin/authenticate/outingformforstudents/"class="btn btn-secondary">Give response</a>
+    <hr/>
+    <br>
+   
+    <table border ="2" id="hostel">
+        <div id ="demo" >
+           
+            <marquee behavior="scroll" direction="right"><b>Queries from students</b> </marquee>
+          
+        </div>
+        <tr>
+            
+            <th>Username </th>
+            <th> Email </th>
+            <th>Postcomment</th>
+            <th>Askadmin </th>
+            
+            </tr>
+            
+            <tr>
+              
+               
+               {% for c in Commentsinfo %}
+                <td><b>{{c.Username}}</b></td>
+                <td><b>{{c.Email }}</b></td>
+                <td><b>{{c.Postcomment }}</b></td>
+                <td><b>{{c.Askadmin  }}</b></td>
+               
+            </tr>
+            {% endfor %}
+    
+    </table>
+    <a href="http://127.0.0.1:8000/admin/authenticate/commentsinfo/"class="btn btn-secondary">Give_response for comments</a>
+    <hr/>
+    <h4>Requests from  Students for services</h4>
+    <table border ="2" id="hostel">
+        <div id ="demo" >
+           
+            <marquee behavior="scroll" direction="right"><b>Service requests</b> </marquee>
+          
+        </div>
+        <tr>
+            <th>Username</th>
+            <th>Room_no </th>
+            <th>Block_no </th>
+            <th>Service_required</th>
+            <th> Askadmin</th>
+            
+            </tr>
+            {% for  p in ServicesOfHostel %}
+            <tr>
+                <td><b>{{p.Username}}</b></td>
+                <td><b>{{p.Room_no}}</b></td>
+                <td><b>{{p.Block_no}}</b></td>
+                <td><b>{{p.Service_required }}</b></td>
+                <td><b>{{p.Askadmin }}</b></td>
+               
+               
+                
+            </tr>
+                 {% endfor %}
+        
+    </table>
+    <a href="http://127.0.0.1:8000/admin/authenticate/servicesofhostel/"class="btn btn-secondary">Give_response for services</a>
+<hr/>
+  
+    <table border ="2" id="hostel">
+        <div id ="demo" >
+           
+            <marquee behavior="scroll" direction="right"><b>Complaints</b> </marquee>
+          
+        </div>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Room_no </th>
+            <th>Block_no </th>
+            <th>Post_complaint</th>
+            <th>StudentPhonenumber</th>
+            <th> Askadmin</th>
+            
+            </tr>
+            {% for comp  in Complaint %}
+            <tr>
+                <td><b>{{comp.Username}}</b></td>
+                <td><b>{{comp.Email}}</b></td>
+                <td><b>{{comp.Room_no}}</b></td>
+                <td><b>{{comp.Block_no}}</b></td>
+                <td><b>{{comp.Post_complaint }}</b></td>
+                <td><b>{{comp.StudentPhonenumber }}</b></td>
+                <td><b>{{comp.Askadmin }}</b></td>
+               
+               
+                
+            </tr>
+                 {% endfor %}
+                 </table>
+
+                 <a href="http://127.0.0.1:8000/admin/authenticate/complaint/"class="btn btn-secondary">Give_response for student complaints</a>
+
+
+
+
+
+</center>
+
+</body>
+</html>
+{% endblock %}
+

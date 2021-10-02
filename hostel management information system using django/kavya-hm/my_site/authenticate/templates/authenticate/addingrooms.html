@@ -1,0 +1,86 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+
+<html>
+    <br>
+    <head>
+        <title>Admin page</title>
+        <style>
+       table{
+           width: 200px;
+           height:100px;
+       }     
+    
+    th {
+      height: 5px;
+      color:white;
+      width:100%;
+    
+    }
+    td{
+     height: 50px;
+     font-style: italic;}  
+     body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+td{
+ height: 60px;
+ font-style: italic;} 
+ table{
+    background-color:"white"
+ }
+     </style>
+       
+    </head>
+    <body>
+        
+        <center>
+         <h2>   <a href="{% url 'adminloginhome'%}" class="btn-secondary" >Adminhome</a></h2>
+<h4>Adding Rooms</h4>
+<hr/>
+
+<form method ="POST">
+    {% csrf_token %}
+<table border="3">
+    <tr>
+    <td><b>Block_no</b></td>
+   <td> <input type ="text" placeholder ="Enter block" name="block"  required></td>
+</tr>
+<tr>
+    <td><b>Room_no</b></td>
+   <td> <input type ="text" placeholder ="enter" name="roomno" required></td>
+</tr>
+<tr>
+    <td><b>available_persons</b></td>
+   <td> <input type ="text" placeholder ="available_persons" name="ap" required></td>
+</tr>
+<tr>
+    <td><b>room_type</b></td>
+   <td> <input type ="text" placeholder ="roomtype" name="roomtype" required></td>
+</tr>
+<tr>
+    <td><b>vacancy</b></td>
+   <td> <input type ="text" placeholder ="Enter vacanies" name="vac"  required></td>
+</tr>
+<tr>
+    <td><b>price</b></td>
+   <td> <input type ="text" placeholder ="Enter price" name="price"  required></td>
+</tr>
+
+</form>
+<button type="submit" class="btn btn-secondary">Submit</button>
+</center>
+</body>
+</html>
+
+
+{% endblock %}

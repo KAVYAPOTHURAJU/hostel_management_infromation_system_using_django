@@ -1,0 +1,66 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table{
+        border-collapse: collapse;
+       width: 70%;
+      }
+      th {
+  height: 80px;
+  color:blue;
+   width:400%;
+}
+td{
+ height: 30px;
+ width:auto;
+ font-style: italic;
+ }
+ 
+    </style>
+  </head>
+  <br><br><br>
+  <h3> <a href="{% url 'adminloginhome'%}" class="btn-secondary" >ProfileHome</a></h3>
+<h3>Services editing page </h3>
+
+<hr/>
+
+
+<form method = "POST" action="/Update/{{ServicesOfHostel.id}}/">
+  {% csrf_token %}
+<table border ="2">
+    <tr>
+        <td>id</td>
+     <td><input type="text"  name="id" value="{{ServicesOfHostel.id}}"  readonly ></td>
+   </tr>
+  <tr>
+       <td>Username</td>
+    <td><input type="text"  name="Username" value="{{ServicesOfHostel.Username}}"   ></td>
+  </tr>
+  <tr>
+    <td>Room_no</td>
+    <td><input type="text"    name= "roomno"  value="{{ServicesOfHostel.Room_no}}" ></td>
+  </tr>
+  <tr>
+    <td>Block_no</td>
+    <td><input type="text"    name= "block"  value="{{ServicesOfHostel.Block_no}}"></td>
+  </tr>
+  <tr>
+    <td>Service_required</td>
+    <td><input type="text"  name= "ser"   value="{{ServicesOfHostel.Service_required}}" > </td>
+  </tr>
+  <tr>
+    <td>Askadmin</td>
+    <td><input type="text"  name= "admin"  value="{{ServicesOfHostel.Askadmin}}" > </td>
+  </tr>	
+</table>
+<br>
+<input type="submit" value="updateservice" class=" btn btn-secondary"/>
+</form>
+<br>
+<hr/>
+</html>
+  {% endblock %}

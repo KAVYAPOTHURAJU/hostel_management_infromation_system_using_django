@@ -1,0 +1,131 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> hostel management information system</title>
+    <style>
+      * {
+  box-sizing: border-box;
+}
+
+/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+/* Style the list */
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price .header {
+  background-color:rgba(139, 0, 109, 0.76);
+  color: white;
+  font-size: 25px;
+}
+
+/* List items */
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: rgb(170, 4, 95);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change the width of the three columns to 100%
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0px;
+  padding:0px;
+  font:poppins;
+}
+</style>
+  </head>
+  <body style="background-color:whitesmoke;"> 
+    <br><br><br><br><br>
+    <center>
+  <h1>MESS DETAILS FOR OUR HOSTEL</h1> 
+  </center> 
+  <center>
+  <h2>look at mess info to know more details!</h2>
+  </center>
+  <div class="columns">
+     <ul class="price">
+      <li class="header">TIMINGS</li>
+      <li><b>BREAKFAST:we provide breakfast daily from 9 to 10AM</b></li> 
+      <li><b>LUNCH:we provide lunch daily from 12 to 1AM</b></li> 
+      <li><b>SNACKS:we provide snacks daily from 4 to 5PM</b></li> 
+      <li><b>DINNER:we provide dinner daily from 8 to 9PM</b></li> 
+     </ul>
+ </div>
+ <div class="columns">
+  <ul class="price">
+    <li class="header">VEG</li>
+    <li><b>BREAKFAST:we serve breadjam,sandwitch,milk ,idli,dosaetc</b></li> 
+      <li><b>LUNCH:we serve dal,roti,salad,basic south indian meals etc</b> </li> 
+      <li><b>SNACKS:we serve biscuits,fruits etc</b></li> 
+      <li><b>DINNER:we serve meals/tiffin section</b></li> 
+      <li><b>We charge Rs.1500 per month </b></li> 
+   </ul>   
+    </ul>
+    </div>
+    <div class="columns">
+  <ul class="price">
+    <li class="header">NON-VEG</li>
+     <li><b>BREAKFAST:we serve breadjam ,sandwitch,milk and egg,idli,dosa etc</b></li> 
+      <li><b>LUNCH:we serve non-veg thrice at a week ,south indian basic meals</b></li> 
+      <li><b>SNACKS:we serve carbs, biscuits,fruits</b></li> 
+      <li><b>DINNER:we serve meals/tiffin section </b></li> 
+      <li><b>We charge Rs.2000 per month </b></li> 
+      
+      </ul>
+     </div> 
+     <li><b><i>In our hostel mess we provide nutritious and hygenic food</i></b></li>
+     <li><b><i>Healthy food is a key of healthy mind</i></b></li>
+     <li><b><i>Healthy food which make them feel like home</i></b></li>
+     <li><b><i>Veg and non-veg meals are also served to the students according to their choice</i></b></li>
+     <li><b></i>Mess serves breakfast,lunch,snacks,dinner everyday and weekly menu is avaible  with the mess-incharge</i></b></li>
+     <li><b><i>Self-service system is promoted in the mess</i></b></li>
+     </body>
+    </html>
+    {% endblock %}

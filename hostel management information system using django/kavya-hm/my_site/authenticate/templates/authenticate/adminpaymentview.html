@@ -1,0 +1,165 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+    <title>Student payment details</title>
+    <style>
+ 
+#hostel{
+  font-family:  sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#hostel td, #hostel th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+h4{
+    color:black;
+}
+h4 :hover{
+    background-color: #ddd;
+}
+#hostel tr:nth-child(even){background-color:cream;}
+
+#hostel tr:hover {background-color: #ddd;}
+      .demo{
+        background-color:white;
+      }
+
+      table{
+       background-color:white;
+      } 
+
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+td{
+ height: 60px;
+ font-style: italic;} 
+ .trail{
+     color:blueviolet;
+       background-color:white;
+   
+ } 
+ body {
+    background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+       tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+        h4{
+            color:lightblue;
+           
+        }
+        #one{
+         color:white;
+        background-color:blue ;
+        width:30cm;
+       height: 1cm;
+       text-align: center;
+        }
+        #ones{
+            color:white;
+        background-color:blue ;
+        width:34.2cm;
+       height: 1cm;
+       text-align: center;
+        }
+</style>
+   
+</head>
+<body>
+   
+    <center>
+     <h3><a href="{% url 'adminloginhome'%}" class="btn-secondary" >Adminhome</a></h3>   
+        <br>
+        <br>
+        <div id ="ones">
+            <marquee behavior="scroll" direction="right"><b>Here is the list of Payment details of rooms👇🏻!! </b> </marquee>
+            </div>
+       
+      
+        
+                <div class="demo">
+    <table border ="2" id="hostel">
+        <tr>
+            <th> Username</th>
+            <th> Email </th>
+            <th>Education </th>
+            <th>Gender  </th>
+            <th> Room_no </th>
+            <th> Block_no </th>
+            <th>room_type</th>
+            <th> price</th>
+            <th>Transactionid</th>
+            <th>Receipt</th>
+            </tr>
+            {% for  room in RoomPaymentForm  %}
+            <tr>
+                <td><b>{{room.Username}}</b></td>
+                <td><b>{{room.Email }}</b></td>
+                <td><b>{{room.Education }}</b></td>
+                <td><b>{{room.Gender   }}</b></td>
+                <td><b>{{room.Room_no}}</b></td>
+                <td><b>{{room.Block_no}}</b></td>
+                <td><b>{{room.room_type }}</b></td>
+                <td><b>{{room.price }}</b></td>
+                <td><b>{{room.Transactionid }}</b></td>
+                <td><b>{{room.Receipt }}</b></td>
+                
+            </tr>
+                 {% endfor %}
+    </table>
+                     </div>
+ <a href="http://127.0.0.1:8000/admin/authenticate/roompaymentform/  "  class="btn btn-secondary">Room Payment details</a>
+    <br>
+    <br><br><br>
+
+    <div id ="one">
+        <marquee behavior="scroll" direction="right"><b>Mess and Services payment details 👇🏻!!</b> </marquee>
+        </div>
+   
+    <table border ="2" id="hostel">
+        <tr>
+            <th> Username</th>
+            <th> Email </th>
+            <th>Education </th>
+            <th>Gender  </th>
+            <th> Room_no </th>
+            <th> Block_no </th>
+            <th> price</th>
+            <th>Transactionid</th>
+            <th>Receipt</th>
+            </tr>
+            {% for s in MessPaymentForm  %}
+            <tr>
+                <td><b>{{s.Username}}</b></td>
+                <td><b>{{s.Email }}</b></td>
+                <td><b>{{s.Education }}</b></td>
+                <td><b>{{s.Gender   }}</b></td>
+                <td><b>{{s.Room_no}}</b></td>
+                <td><b>{{s.Block_no}}</b></td>
+                <td><b>{{s.price }}</b></td>
+                <td><b>{{s.Transactionid }}</b></td>
+                <td><b>{{s.Receipt }}</b></td>
+                
+            </tr>
+                 {% endfor %}
+    </table>
+             
+    <br>
+ <a href="http://127.0.0.1:8000/admin/authenticate/messpaymentform/"class="btn btn-secondary">Mess payment details</a>
+</center>
+
+</body>
+</html>
+{% endblock %}
+

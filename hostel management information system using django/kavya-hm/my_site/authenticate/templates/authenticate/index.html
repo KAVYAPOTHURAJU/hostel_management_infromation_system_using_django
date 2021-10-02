@@ -1,0 +1,151 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> hostel management information system</title>
+    <style>
+ *{
+  box-sizing:border-box;
+}
+body{
+  margin:0px;
+  padding:0px;
+  font:poppins;
+  background-color: lightyellow;
+}
+
+
+h2{
+  color: darkblue;
+}
+
+
+
+a{
+  text-decoration:none;
+}
+.Hey {
+  color:#39bfbd;
+  font-weight:500;
+  font-size:0.9em;
+  border-bottom:2px solid #39bfbd;
+}
+.Image{
+  width:50%;
+  height:60vh;
+  margin:1vh;
+  position:relative; left:-210px; top:40px;
+  
+}
+.Image img{
+  width:200%;
+  height:70%;
+  
+}
+.Content{
+  display:flex;
+  width:90%;
+   justify-content:space-around;
+  align-items:center;
+  postion:absolute;
+  left:50%;
+  right:50%;
+  transform:translate(5%,5%);
+  
+}
+.main-text{
+  width:500px;
+}
+.main-text h1{
+  font-size:3.5em;
+  color:white;
+  margin:0px 0px 10px 0px;
+  line-height:60px;
+}
+.main-text p{
+  color:white;
+}
+.info-button{
+  width:190px;
+  height:44px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#00cc99;
+  border-radius:20px;
+  box-shadow:5px 10px 30px rgba(24,139,119,0.2);
+   
+}
+.resume-button:hover{
+  background-color:#cd2323;
+  transition:all ease 0.4;
+}
+.bottom text{
+  display:flex;
+  width:90%;
+  justify-content:space-around;
+  align-items:center;
+  postion:absolute;
+  left:50%;
+  right:50%;
+  transform:translate(5%,5%);
+  
+}
+      body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+      </style>
+  </head>
+  <body>
+
+    <br><br>
+   
+    <section id="main">
+     
+      <center>
+        
+        <p>
+          <br>
+          
+        </center>  
+        
+      <div class ="Content"> 
+                 
+    <div class ="Image">
+     <img src="https://cdn.glitch.com/dbd33946-5d19-405e-8093-ef8561cf6e5e%2FWhatsApp%20Image%202021-05-12%20at%208.25.59%20PM.jpeg?v=1620831395014">
+          </div>
+          
+    <div main ="main-text">
+      <h2>  <strong> <i>Far away from home!!missing the love and affection of home ....</i> <br></strong><br></h2></p>
+     <h3><i>Welcome!!!</i></h3>
+     <b text-align="left"><i>Don't worry you have come to right place.....
+        We promise to recreate your home feeling  which will help you to feel better and concentrate on your works!!
+      Do register into website and book your slots!!!</i></b>
+        <p1>
+       <b>   <i>Want to know more about the website?<br> Click see the info!!</i>👇🏻<a href="{% url 'seeinfo'%}" class="info-button">See the info</a></b></b>
+   </div>
+
+         </div>
+      
+    </section>
+
+    <div class = "bottom text";>   
+   <p><b><i>Having queries about our Hostel 🤔💭.... <br>
+    Do you want to give any suggestions and feedback 📝<br>
+    or you can ask information about our HostelHome...<br>
+   Feel free to visit our comments page and post your comment!!We will answer to all your Queries👍
+   <br>Click !!Say hi 👇🏻 <a href="{% url 'Sayhi'%}" class="info-button">Say Hi!!</a> </i></b>
+  
+  </p>
+  </div>
+  
+  
+    
+  </body>
+  </html>
+
+  {% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'authenticate/base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br>
+<style>
+  body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+table{
+           width: 300px;
+           height:200px;
+           background-color:#eee;border-collapse:collapse;     
+       }  
+</style>
+<form method ="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+<h3><b>Payment Form </b></h3>
+<h4><b> Make payment to following number 9391139594</b></h4>
+<hr/>
+<table border ="2">
+  <tr>
+    <td><b>Username</b></td>
+    <td><input type = "text" placeholder="Enter your username" name="UserName" required style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+    <td><b>Email</b></td>
+    <td><input type = "text" placeholder="Enter your email" name= "email" required style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+    <td><b>Education</b></td>
+    <td><input type = "text" placeholder="Enter your Education" name="edu" required style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+    <td><b>Gender</b></td>
+    <td><input type = "radio" value="M" name="gender">Male
+      <input type = "radio" value="F" name="gender">Female</td>
+  </tr>
+  <tr>
+    <td><b>Room_no</b></td>
+    <td><input type = "text" placeholder=" Enter  room no" name="roomno"  required  style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+    <td><b>Block_no</b></td>
+    <td><input type = "text" placeholder=" Enter block" name="block" required  style="width: 400px; height:50px;" ></td>
+  </tr>
+  <tr>
+    <td><b>room_type</b></td>
+    <td><input type = "text" placeholder=" Enter Roomtype" name="roomtype" required  style="width: 400px; height:50px;"></td>
+  </tr>
+    <tr>
+    <td><b>price</b></td>
+    <td><input type = "text" placeholder=" Enter price" name= "priceofroom" required  style="width: 400px; height:50px;"></td>
+  </tr>
+
+<tr>
+<td><b>Transactionid</b></td>
+<td><input type = "text" placeholder=" Enter id" name= "id" required  style="width: 400px; height:50px;"></td>
+</tr>
+<tr>
+  <td> <b>Receipt </b></td>
+  <td> <input type ="file" name="myfile" required  style="width: 400px; height:50px;"d></td>
+</tr>
+
+<input type="submit" value=" Payment!" class=" btn btn-secondary"  >
+	</form>
+</table>
+
+
+
+
+
+
+  {% endblock %}

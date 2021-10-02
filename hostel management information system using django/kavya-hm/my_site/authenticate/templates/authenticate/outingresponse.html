@@ -1,0 +1,84 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+             
+h5{color:white;
+background-color:black;
+width:6cm;
+}
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+
+
+  background-size:cover;
+  font-family: sans-serif;
+}
+.demo
+{
+background-color : white;
+}
+ .trail{
+        color:blue;
+        background-color:white ;
+      }
+      tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+    </style>
+  </head>
+  <body>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+    <h3><i><b>You can view your Outing form Response here!!</b></i></h3>
+
+    <center>
+        <hr/>
+        <input type = "text" placeholder="Enter your username" name="Username" required>
+        <input type = "submit" value="Search" class="btn btn-secondary" required />   
+        <div class ="trail">
+          <marquee behavior="scroll" direction="right"><b>To check your approvals, type your  username   and click search</b> </marquee>
+          </div>
+              <div class="demo">
+    <table border ="2" >
+        <tr>
+            
+            <th>Username </th>
+            <th> Email </th>
+            <th>Room_no</th>
+            <th>Block_no</th>
+            <th>checkOut</th>
+            <th>checkIn</th>
+            <th>Purpose</th>
+            <th>Approval</th>
+
+            </tr>
+            {% for  result in outing %}
+            <tr>
+                <td><b>{{result.Username}}</b></td>
+                <td><b>{{result.Email }}</b></td>
+                <td><b>{{result.Room_no }}</b></td>
+                <td><b>{{result.Block_no }}</b></td>
+                <td><b>{{result.checkOut }}</b></td>
+                <td><b>{{result.checkIn }}</b></td>
+                <td><b>{{result.Purpose}}</b></td>
+                <td><b>{{result.Approval }}</b></td>
+            </tr>
+             {% endfor %}    
+    </table>
+    </div>
+</center>
+
+</body>
+</html>
+{% endblock %}

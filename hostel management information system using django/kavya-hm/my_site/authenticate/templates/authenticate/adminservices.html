@@ -1,0 +1,42 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+    <title>Services response form </title>
+    </head>
+    <body>
+        <center>
+            <h3> <a href="{% url 'adminloginhome'%}" class="btn-secondary" >ProfileHome</a></h3>
+<h4>Requests from  Students for services</h4>
+    <table border ="2">
+        <tr>
+            <th>id</th>
+            <th>Username</th>
+            <th>Room_no </th>
+            <th>Block_no </th>
+            <th>Service_required</th>
+            <th> Askadmin</th>
+            
+            </tr>
+            {% for editservice in ServicesOfHostel %}
+            <tr>
+                <td><b>{{editingservice.id}}</b></td>
+                <td><b>{{editservice.Username}}</b></td>
+                <td><b>{{editservice.Room_no}}</b></td>
+                <td><b>{{editservice.Block_no}}</b></td>
+                <td><b>{{editservice.Service_required }}</b></td>
+                <td><b>{{editservice.Askadmin }}</b></td>
+                <td><b><a href="/editservice/{{editservice.id}}/">Edit_response</a></b></td>
+               
+               
+                
+            </tr>
+                 {% endfor %}
+        
+    </table>
+</center>
+
+</body>
+</html>
+{% endblock %}

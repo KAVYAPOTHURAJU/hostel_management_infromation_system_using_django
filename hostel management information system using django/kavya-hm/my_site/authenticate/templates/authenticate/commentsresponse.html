@@ -1,0 +1,87 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+    <style>
+      h5{color:white;
+background-color:black;
+width:6cm;
+}
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+
+
+  background-size:cover;
+  font-family: sans-serif;
+}
+.demo
+{
+background-color : white;
+}
+ .trail{
+        color:blue;
+        background-color:white ;
+      }
+      tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+    </style>
+  </head>
+  <body>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+    
+    <center>
+        <hr/>
+        <input type = "text" placeholder="Enter your username" name="Username" required>
+        <input type = "submit" value="Search" class="btn btn-secondary" required />   
+    
+    <h3><i><b>You can view your Queries Response here!!..</i></b></h3>
+
+    <div class ="trail">
+      <marquee behavior="scroll" direction="right"><b> To View  Response from admin ,type your username and click search </b> </marquee>
+      </div>
+          <div class="demo">
+
+        
+        
+    
+    <table border ="2" >
+        <tr>
+            
+            <th>Username </th>
+            <th> Email </th>
+            <th>Postcomment</th>
+            <th>Askadmin </th>
+            
+            </tr>
+            
+            <tr>
+              
+               
+               {% for x in userinfo %}
+                <td><b>{{x.Username}}</b></td>
+                <td><b>{{x.Email }}</b></td>
+                <td><b>{{x.Postcomment }}</b></td>
+                <td><b>{{x.Askadmin  }}</b></td>
+               
+            </tr>
+            {% endfor %}
+          </div>
+    </table>
+
+</center>
+
+</body>
+</html>
+{% endblock %}

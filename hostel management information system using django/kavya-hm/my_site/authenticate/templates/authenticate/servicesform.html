@@ -1,0 +1,77 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+<html>
+  <head>
+    <style>
+      table{
+        border-collapse: collapse;
+       width: 70%;
+      }
+      th {
+  height: 80px;
+  color:blue;
+   width:400%;
+}
+td{
+ height: 60px;
+ font-style: italic;
+ }
+ 
+ td{
+ height: 50px;
+ font-style: italic;}
+ body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+table{
+           width: 300px;
+           height:200px;
+           background-color:#eee;border-collapse:collapse;     
+       } 
+    </style>
+  </head>
+  <br><br><br><br><br>
+  <h3>
+<b>Services form 
+If you require any room service or laundary service,Let us know by posting the your required services below!!👇🏻</b></h3>
+<hr/>
+
+
+<form method = "POST">
+  {% csrf_token %}
+<table border ="2">
+  <tr>
+    <td><b>Username</b></td>
+    <td><textarea placeholder="Enter your username" name="UserName"cols="100" rows="2" required></textarea></td>
+  </tr>
+  <tr>
+    <td><b>Room_no</b></td>
+    <td><textarea  placeholder="Enter your roomno"  name= "roomno" cols="100" rows="2" required></textarea></td>
+  </tr>
+  <tr>
+    <td><b>Block_no </b></td>
+    <td><textarea  placeholder="Enter your block"  name= "block" cols="100" rows="2" required></textarea></td>
+  </tr>
+  <tr>
+    <td><b>Service_required</b></td>
+    <td><textarea  placeholder="Enter your service" name= "ser" cols="100" rows="5" required> </textarea></td>
+  </tr>
+  <tr>
+    <td><b>Askadmin</b></td>
+    <td><textarea placeholder="type ask for admin" name= "admin" cols="100" rows="2" required> </textarea></td>
+  </tr>	
+</table>
+<br>
+<input type="submit" value="Submit!" class=" btn btn-secondary">
+</form>
+<br>
+<hr/>
+<h5><b>You can view admin response for your query by clicking on Response👇🏻</b></h5><a href="{% url 'serviceresponse'%}"class="btn btn-secondary">Response page! </a>   
+
+
+
+</html>
+  {% endblock %}

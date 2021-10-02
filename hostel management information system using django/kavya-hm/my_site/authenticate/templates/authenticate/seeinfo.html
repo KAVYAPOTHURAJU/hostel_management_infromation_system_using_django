@@ -1,0 +1,94 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> hostel management information system</title>
+    <style>
+      
+      h4{
+        color:darkblue;
+        
+      }
+      h2{
+        	color:#007acc;
+      }
+      body{
+  margin:0px;
+  padding:0px;
+  font:poppins;
+  background-color: lightyellow;
+}
+img {
+  width: 600px;
+  height: 242px;
+}
+      
+      </style>
+  </head>
+  <body>
+    <br><br> <br><br><br>
+    <center>
+  <h2> Have a glance at our website and get to know more details in our hostel!!</h2>
+  </center> 
+  <center>
+    <img src ="https://cdn.glitch.com/9c374ff4-54e5-42fe-ae43-ab1a033f8326%2FWhatsApp%20Image%202021-06-16%20at%204.25.05%20PM.jpeg?v=1623929005602" >
+  </center>
+    
+    <h4><i> <p2 align="right">Hostel rooms are comfortably-furnished and make for a good home away from home.<br>
+      In our premises we  ensures the safety and security of the students in hostels with a team of security officers <br>
+      There are security guards who take care that proper decorum is maintained in the  hostel and are there to assist the students in case of availing Residential Facility.</p2> </i><br>
+ <b>
+      <i>There is a range of accommodation options to choose from, for student's convenience.</i></h4>
+      In this kind of accommodation, students have access to like we have ...<br>1)TV room
+     <br> 2) aqua guard for hot, cold and normal drinking water
+     <br> 3) other leisure/sports activities within the hostel premises.</b> </h4></i>
+<h3> Other features of our hostel!</h3>
+<ul>
+<b>
+ <li> <i> 24x7 Wi-Fi connectivity provided in all hostels🌐.</i></li>
+<li><i> CCTV cameras at entrances of all hostels and foyer inside the campus. 📸</i></li>
+ <li><i>24x7 electricity and water supply in all the hostels⚡,🚰.</i> </li>
+<li> <i>Night cafeterias up to 1.00 AM. ☕</i></li>
+ <li><i>Solar panels installed in all hostels for hot water. </i></li>
+  <li><i>Caretakers and housekeeping services are provided in all hostels during day and night👩🏻‍⚕️.</i></li></ul></b>
+ <h3>Sports Infrastructure within campus :</h3>
+ <b>
+ <ul>
+ <li>Basketball court 🏀</li>
+<li>Cricket ground🏏</li>
+<li>Hockey ground🏒</li>
+<li>Indoor Badminton court🏸</li>
+<li>Swimming pool 🏊🏼</li>
+<li>Table tennis 🏓</li>
+<li>Chess  and Carroms etc</li>
+</ul><h4></b>
+<p3><i>These types of accommodation gives them the comfort of company as they settle into their college and course. It also gives them opportunity to make friends and get acquainted with the campus and its facilities.</i></p3></h3>
+<h3>Facilities provided in Room</h4>
+  <h4>
+    Cot & Mattress |Table | Chair | Cupboard | Curtains| Necessary electrical equipments
+  </h4>
+<h4> Rules and Regulations: <br></h4><h5>
+    
+    
+• The student should not paste any poster or painting on the walls of rooms or at other places in and outside residential premises. <br>•  The entrance of outsiders in the residential accommodation will be restricted and entry and/or stay of parents/guardian or any other visitor (if authorized)will be subject to the permission of warden and other concerned authorities of the College
+<br>
+• Students having complaints regarding mess should report to the Warden, Principal and A/O. But they are not allowed to indulge in accumulating the mess or strike.<br> • All Hostel gates will be closed at 9.00 a.m. and opened at 4.15 p.m. during the college days. In between, students are not allowed to enter the hostel. All hostel gates will be closed at 8.30 p.m. daily.
+<br>
+• Students themselves are responsible for the cleanliness of their rooms/apartments. However the washrooms and corridors will be cleaned by the housekeeping staff on periodical basis.<br> • Student should be present in their respective rooms when the attendance is taken during study hours. Absentees will be fined.
+<br>
+  • Students are not to damage any property inside the residential premises.<br> • Students with genuine reason are allowed to go out even after 7p.m. to 8 p.m. with the warden’s permission Girls and boys have separate blocks and each block has a fixed capacity.<br>
+<h4>
+  <i>
+  <p> Register into our website to book your slots!!</p>click👉🏻<a href="{% url 'register'%}"class="button">Register</a>
+<p>If you have any queries just post it down in our comment page </p>click👉🏻<a href="{% url 'Sayhi'%}"class="button">Sayhi</a>
+<p>Return to homepage !  </p>click👉🏻<a href="{% url 'index'%}"class="button">HOME</a>
+  </i>
+  </h5>
+
+
+</body>
+    </html>
+    {% endblock %}

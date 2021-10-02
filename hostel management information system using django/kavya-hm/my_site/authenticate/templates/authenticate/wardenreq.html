@@ -1,0 +1,66 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+<html>
+  <head>
+    <style>
+      table{
+        border-collapse: collapse;
+       width: 70%;
+      }
+      th {
+  height: 80px;
+  color:blue;
+   width:400%;
+}
+td{
+ height: 60px;
+ font-style: italic;
+ }
+ body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}      
+
+ 
+    </style>
+  </head>
+  <br><br>
+<h3><b>Warden message form </b></h3>
+
+<hr/>
+
+<center>
+  <h2>   <a href="{% url 'adminloginhome'%}" class="btn-secondary" >Adminhome</a></h2>
+<form method = "POST">
+  {% csrf_token %}
+<table border ="2">
+  <tr>
+    <td><h5><b>Username</b></h5></td>
+    <td><textarea placeholder="Enter your username" name="UserName"cols="100" rows="2" required></textarea></td>
+  </tr>
+  <tr>
+    <td><h5><b>Room_no</b></h5></td>
+    <td><textarea  placeholder="Enter your roomno"  name= "roomno" cols="100" rows="2" required></textarea></td>
+  </tr>
+  <tr>
+    <td><h5><b>Block_no</b></h5></td>
+    <td><textarea  placeholder="Enter your block"  name= "block" cols="100" rows="2" required></textarea></td>
+  </tr>
+  <tr>
+    <td><h5><b>Wardenmsg</b></h5></td>
+    <td><textarea  placeholder="Enter your message" name= "msg" cols="100" rows="5" required> </textarea></td>
+  </tr>
+  
+</table>
+<br>
+<input type="submit" value="Submit!" class=" btn btn-secondary">
+</form>
+</center>
+<br>
+<hr/>
+<a href="http://127.0.0.1:8000/admin/authenticate/notice/" class=" btn btn-secondary">Send notices</a>
+
+</html>
+  {% endblock %}

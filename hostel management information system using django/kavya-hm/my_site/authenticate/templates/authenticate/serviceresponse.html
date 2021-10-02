@@ -1,0 +1,78 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+      table{
+        width:8cm;
+      }
+   h5{color:white;
+background-color:black;
+
+}
+th {
+  height: 40px;
+  color:white;
+  background-color: blue;
+  width:8cm;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+
+
+  background-size:cover;
+  font-family: sans-serif;
+}
+tr:nth-child(even) {
+			background-color: Lightblue;
+     
+		} 
+    tr:nth-child(odd) {
+			background-color: white;
+		} 
+    </style>
+  </head>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+
+<hr/>
+<input type = "text" placeholder="Enter your username" name="Username" required>
+<input type = "submit" value="Search" class="btn btn-secondary" required />
+<div class ="trail">
+  <marquee behavior="scroll" direction="right"><b>View your details,type your username and click search </b> </marquee>
+  </div>
+  
+<table border ="1">
+    <tr>
+        <th>Username</th>
+        <th>Room_no </th>
+        <th>Block_no </th>
+        <th>Service_required</th>
+        <th> Askadmin</th>
+        
+        </tr>
+        {% for  j in serviceinfo %}
+        <tr>
+            <td><b>{{j.Username}}</b></td>
+            <td><b>{{j.Room_no}}</b></td>
+            <td><b>{{j.Block_no}}</b></td>
+            <td><b>{{j.Service_required }}</b></td>
+            <td><b>{{j.Askadmin }}</b></td>
+           
+           
+            
+        </tr>
+             {% endfor %}
+    </form>
+</table>
+<br>
+
+
+    
+
+</html>
+{% endblock %}

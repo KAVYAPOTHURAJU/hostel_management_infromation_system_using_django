@@ -1,0 +1,92 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+      h5{color:white;
+background-color:black;
+width:6cm;
+}
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+
+
+  background-size:cover;
+  font-family: sans-serif;
+}
+.demo
+{
+background-color : white;
+}
+ .trail{
+        color:blue;
+        background-color:white ;
+      }
+      tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+    </style>
+  </head>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+
+<hr/>
+<h4><b>Details </b></h4>
+<input type = "text" placeholder="Enter your username" name="Username" required>
+<input type = "submit" value="Search" class="btn btn-secondary" required />
+<div class ="trail">
+  <marquee behavior="scroll" direction="right"><b>View your details,type your username and click search </b> </marquee>
+  </div>
+      <div class="demo">
+<table border ="1">
+    <tr>
+        <th>Username</th>
+        <th>Email  </th>
+        <th> Education</th>
+        <th>Gender  </th>
+        <th>Block_no </th>
+        <th>Room_no </th>
+        <th>room_type</th>
+        <th> price</th>
+        <th>checkIn</th>
+        <th>checkOut</th>
+        <th>Room_Payment_status</th>
+        <th>Mess_Payment_status</th>
+        <th>StudentPhonenumber</th>
+        </tr>
+        {% for  ob in infoofstudent %}
+        <tr>
+            <td><b>{{ob.Username}}</b></td>
+            <td><b>{{ob.Email   }}</b></td>
+            <td><b>{{ob.Education   }}</b></td>
+            <td><b>{{ob.Gender   }}</b></td>
+            <td><b>{{ob.Block_no}}</b></td>
+            <td><b>{{ob.Room_no}}</b></td>
+            <td><b>{{ob.room_type }}</b></td>
+            <td><b>{{ob.price }}</b></td>
+            <td><b>{{ob.checkIn }}</b></td>
+            <td><b>{{ob.checkOut }}</b></td>
+            <td><b>{{ob.Room_Payment_status}}</b></td>
+            <td><b>{{ob.Mess_Payment_status}}</b></td>
+            <td><b>{{ob.StudentPhonenumber }}</b></td>
+            
+        </tr>
+             {% endfor %}
+    </form>
+</table>
+<br>
+
+</div>
+    
+ 
+</html>
+{% endblock %}

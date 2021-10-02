@@ -1,0 +1,102 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+      table{
+        width: 50%;
+      }
+      th {
+  height: 60px;
+  color:blue;
+
+}
+td{
+ height: 60px;
+ font-style: italic;}
+ th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+td{
+ height: 60px;
+ font-style: italic;} 
+ table{
+           width: 300px;
+           height:200px;
+           background-color:#eee;border-collapse:collapse;     
+       }     
+ </style>
+    </style>
+  </head>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+<h3><b> details for your checking out 
+  <br>Fill up our details inorder to accept your checking out </b> </h3>
+<hr/>
+<table border ="1">
+  <tr>
+    <td><b>Username</b></td>
+    <td><input type = "text" placeholder="Enter your username" name="UserName" required style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+    <td><b>Email</b></td>
+    <td><input type = "text" placeholder="Enter your email" name= "email" required style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+    <td><b>Room_no</b></td>
+    <td><input type = "text" placeholder=" Enter room no" name="roomno" required style="width: 400px; height:50px;"></td>
+  </tr>
+
+    <td><b>Block_no</b></td>
+    <td><input type = "text" placeholder=" Enter block no" name="block" required style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+    <td><b>checkOut</b></td>
+    <td><input type = "date" placeholder=" Enter checkout" name="checkout" required style="width: 400px; height:50px;"></td>
+  </tr>
+  <tr>
+        <td><b>checkIn</b></td>
+        <td><input type = "date" placeholder=" Enter checkin " name="checkin" required style="width: 400px; height:50px;"></td>
+</tr>
+<tr>
+<td><b>Purpose</b></td>
+<td><textarea placeholder="Enter purpose of outing" cols="48" rows="4" name= "purpose" required></textarea></td>
+</tr>
+<tr>
+    <td><b>StudentPhonenumber</b></td>
+    <td><input type = "text" placeholder="Enter your number" name= "snumber" required style="width: 400px; height:50px;"></td>
+</tr>
+<tr>
+    <td><b>Parentname</b></td>
+    <td><input type = "text" placeholder="Enter Parentname" name= "pname" required style="width: 400px; height:50px;"></td>
+</tr>
+<tr>
+    <td><b>ParentPhonenumber</b></td>
+    <td><input type = "text" placeholder="Enter ParentPhonenumber" name= "pnumber" required style="width: 400px; height:50px;"></td>
+</tr>
+<tr>
+    <td><b>Approval</b></td>
+    <td><input type = "text" placeholder="type ask Approval" name= "approval" required style="width: 400px; height:50px;"></td>
+</tr>
+
+
+
+
+	</form>
+</table>
+<input type="submit" value="Ask_approval" class=" btn btn-secondary">
+<a href="{% url 'outingresponse'%}"class="btn btn-secondary">   check response</a>
+
+</html>
+{% endblock %}

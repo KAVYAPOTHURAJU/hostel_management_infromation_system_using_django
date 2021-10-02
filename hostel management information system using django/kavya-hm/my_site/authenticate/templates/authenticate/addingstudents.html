@@ -1,0 +1,111 @@
+{% extends 'authenticate/adminindex.html' %}
+
+{% block content %}
+
+<html>
+    <br><br>
+    <head>
+        <title>Admin page</title>
+        <style>
+       table{
+           width: 200px;
+           height:100px;
+       }     
+    
+    th {
+      height: 5px;
+      color:white;
+      width:100%;
+    
+    }
+    td{
+     height: 50px;
+     font-style: italic; }
+
+ body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}}  
+     </style>
+       
+    </head>
+    <body>
+      
+        <center>
+            <h3> <a href="{% url 'adminloginhome'%}" class="btn-secondary" >Adminhome</a></h3>
+<h4>Adding Students</h4>
+<hr/>
+<a href="{% url 'bookingdetails'%}" class="btn-secondary" >Bookingdetails</a>
+<form method ="POST">
+    {% csrf_token %}
+<table border="3">
+    <tr>
+    <td><b>Username</b></td>
+   <td> <input type ="text" placeholder ="Enter username" name="User"  required></td>
+</tr>
+<tr>
+    <td><b>Email</b></td>
+   <td> <input type ="text" placeholder ="email" name="email" required></td>
+</tr>
+<tr>
+    <td><b>Education</b></td>
+   <td> <input type ="text" placeholder ="education" name="edu" required></td>
+</tr>
+<tr>
+    <td><b>Gender</b></td>
+   <td> <input type ="text" placeholder ="gender" name="gender" required></td>
+</tr>
+<tr>
+    <td><b>Block_no</b></td>
+   <td> <input type ="text" placeholder ="Enter block" name="block"  required></td>
+</tr>
+<tr>
+    <td><b>Room_no</b></td>
+   <td> <input type ="text" placeholder ="Enter roomno" name="roomno"  required></td>
+</tr>
+<tr>
+    <td><b>room_type</b></td>
+   <td> <input type ="text" placeholder ="Enter roomtype" name="roomtype"  required></td>
+</tr>
+<tr>
+    <td><b>price</b></td>
+   <td> <input type ="text" placeholder ="Enter price of room" name="price"  required></td>
+</tr>
+<tr>
+    <td><b>checkIn</b></td>
+   <td> <input type ="text" placeholder ="Enter checkin" name="checkin"  required></td>
+</tr>
+<tr>
+    <td><b>checkOut</b></td>
+   <td> <input type ="text" placeholder ="Enter checkout" name="checkout"  required></td>
+</tr>
+<tr>
+    <td><b>Room_Payment_status</b></td>
+   <td> <input type ="text" placeholder ="Enter status of room payment" name="rp"  required></td>
+</tr>
+<tr>
+    <td><b>Mess_Payment_status</b></td>
+   <td> <input type ="text" placeholder ="Enter status of mess payment" name="mp"  required></td>
+</tr>
+<tr>
+    <td><b>StudentPhonenumber</b></td>
+   <td> <input type ="text" placeholder ="Enter status of studentphono" name="sp"  required></td>
+</tr>
+</table>
+
+<button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+</center>
+</body>
+</html>
+
+
+{% endblock %}

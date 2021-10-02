@@ -1,0 +1,88 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+      table{
+        width: 50%;
+      }
+      th {
+  height: 60px;
+  color:blue;
+
+}
+td{
+ height: 60px;
+ font-style: italic;}
+ th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+td{
+ height: 60px;
+ font-style: italic;} 
+ table{
+           width: 300px;
+           height:200px;
+           background-color:#eee;border-collapse:collapse;     
+       }     
+ </style>
+    </style>
+  </head>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+<h3><b> 
+  <br>You can post your complaints here!! </b> </h3>
+<hr/>
+<table border ="1">
+  <tr>
+    <td><b>Username </b></td>
+    <td><input type = "text" placeholder="Enter your username" name="UserName" required></td>
+  </tr>
+  <tr>
+    <td><b>Email </b></td>
+    <td><input type = "text" placeholder="Enter your email" name= "email" required></td>
+  </tr>
+  <tr>
+    <td><b>Room_no </b></td>
+    <td><input type = "text" placeholder=" Enter room no" name="roomno" required></td>
+  </tr>
+
+    <td><b>Block_no </b></td>
+    <td><input type = "text" placeholder=" Enter block no" name="block" required></td>
+  </tr>
+  
+<tr>
+<td><b>Post_complaint </b></td>
+<td><textarea placeholder="Enter Your complaint" cols="60" rows="3" name= "complaint" required></textarea></td>
+</tr>
+<tr>
+    <td><b>StudentPhonenumber </b></td>
+    <td><input type = "text" placeholder="Enter your number" rows="2" cols="20" name= "snumber" required></td>
+</tr>
+
+<tr>
+    <td> <b>Askadmin </b></td>
+    <td><input type = "text" placeholder="type ask admin" name= "admin" required></td>
+</tr>
+
+
+
+
+	</form>
+</table>
+<input type="submit" value="Submit_complaint" class=" btn btn-secondary">
+<a href="{% url 'complaintsresponse'%}"class="btn btn-secondary">   check response</a>
+
+</html>
+{% endblock %}

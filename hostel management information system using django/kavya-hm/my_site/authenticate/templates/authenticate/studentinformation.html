@@ -1,0 +1,68 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+      table{
+        width: 50%;
+      }
+      th {
+  height: 60px;
+  color:blue;
+
+}
+td{
+ height: 60px;
+ font-style: italic;}
+    </style>
+  </head>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+
+<hr/>
+<table border ="1">
+    <tr>
+        <th>Username</th>
+        <th>Email  </th>
+        <th> Education</th>
+        <th>Gender  </th>
+        <th>Block_no </th>
+        <th>Room_no </th>
+        <th>room_type</th>
+        <th> price</th>
+        <th>checkIn</th>
+        <th>checkOut</th>
+        <th>Room_Payment_status</th>
+        <th>Mess_Payment_status</th>
+        <th>StudentPhonenumber</th>
+        </tr>
+        {% for k in infoofstudent %}
+        <tr>
+            <td><b>{{k.Username}}</b></td>
+            <td><b>{{k.Email   }}</b></td>
+            <td><b>{{k.Education   }}</b></td>
+            <td><b>{{k.Gender   }}</b></td>
+            <td><b>{{k.Block_no}}</b></td>
+            <td><b>{{k.Room_no}}</b></td>
+            <td><b>{{k.room_type }}</b></td>
+            <td><b>{{k.price }}</b></td>
+            <td><b>{{k.checkIn }}</b></td>
+            <td><b>{{k.checkOut }}</b></td>
+            <td><b>{{k.Room_Payment_status}}</b></td>
+            <td><b>{{k.Mess_Payment_status}}</b></td>
+            <td><b>{{k.StudentPhonenumber }}</b></td>
+            
+        </tr>
+             {% endfor %}
+    </form>
+</table>
+<br>
+
+
+    
+ 
+</html>
+{% endblock %}

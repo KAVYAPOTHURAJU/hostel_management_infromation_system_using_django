@@ -1,0 +1,112 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#hostel{
+  font-family:  sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#hostel td, #hostel th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+h4{
+    color:black;
+}
+h4 :hover{
+    background-color: #ddd;
+}
+#hostel tr:nth-child(even){background-color:cream;}
+
+#hostel tr:hover {background-color: #ddd;}
+
+#hostel th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:blue;
+  color: white;
+}
+</style>
+</head>
+<body>
+<head>
+    <title>Availability of rooms</title>
+    <style>
+        
+
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+.demo
+{
+background-color : white;
+}
+ .trail{
+        color:blue;
+        background-color:white ;
+      }
+      tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+ </style>
+   
+</head>
+<body>
+    <br><br><br><br><br>
+    <center>
+        <h4><b>Availability of rooms</b></h4>
+        <div class ="trail">
+<marquee behavior="scroll" direction="right"><b>Here is the list of availablity of rooms of our hostel</b> </marquee>
+</div>
+    <div class="demo">
+    <table border ="2" id=hostel>
+        <tr>
+            <th> Block_no</th>
+            <th>Room_no </th>
+            <th>available_persons </th>
+            <th>room_type  </th>
+            <th> vacancy </th>
+            <th> price</th>
+            </tr>
+            {% for  result in data %}
+            <tr>
+                <td><b>{{result.Block_no}}</b></td>
+                <td><b>{{result.Room_no }}</b></td>
+                <td><b>{{result.available_persons }}</b></td>
+                <td><b>{{result.room_type   }}</b></td>
+                <td><b>{{result.vacancy}}</b></td>
+                <td><b>{{result.price }}</b></td>
+                
+            </tr>
+                 {% endfor %}
+    </table>
+    </div>
+    <br>
+    
+</center>
+  
+</body>
+</html>
+
+</table>
+
+</body>
+</html>
+{% endblock %}

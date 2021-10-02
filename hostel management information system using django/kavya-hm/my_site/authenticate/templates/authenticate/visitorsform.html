@@ -1,0 +1,86 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+      table{
+        width: 50%;
+      }
+      th {
+  height: 60px;
+  color:blue;
+
+}
+td{
+ height: 60px;
+ font-style: italic;}
+ td{
+ height: 60px;
+ font-style: italic;}
+ body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+  background-size:cover;
+  font-family: sans-serif;
+}
+table{
+           width: 300px;
+           height:200px;
+           background-color:#eee;border-collapse:collapse;     
+       }     
+    
+    </style>
+  </head>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+<h4><b>
+Fill up the Visitor Details</b> </h4>
+   
+<hr/>
+<table border ="1">
+  <tr>
+    <td><b>Username</b></td>
+    <td><input type = "text" placeholder="Enter your username" name="UserName" required></td>
+  </tr>
+  <tr>
+    <td><b>Email</b></td>
+    <td><input type = "text" placeholder="Enter your email" name= "email" required></td>
+  </tr>
+  <tr>
+    <td><b>Room_no</b></td>
+    <td><input type = "text" placeholder=" Enter room no" name="roomno"></td>
+  </tr>
+
+    <td><b>Block_no</b></td>
+    <td><input type = "text" placeholder=" Enter block no" name="block"></td>
+  </tr>
+<tr>
+    <td><b>StudentPhonenumber</b></td>
+    <td><input type = "text" placeholder="Enter your number" name= "snumber" required></td>
+</tr>
+<tr>
+    <td><b>Firstvisitor</b></td>
+    <td><input type = "text" placeholder="Enter name" name= "vfname" required></td>
+</tr>
+<tr>
+    <td>VistorPhonenumber</td>
+    <td><input type = "text" placeholder="Enter ParentPhonenumber" name= "vfnumber" required></td>
+</tr>
+<tr>
+    <td><b>Secondvisitor</b></td>
+    <td><input type = "text" placeholder="Enter name" name= "vsname" required></td>
+</tr>
+<tr>
+    <td><b>SecondVistorPhonenumber</b></td>
+    <td><input type = "text" placeholder="Enter Phonenumber" name= "vsnumber" required></td>
+</tr>
+
+
+</form>
+</table>
+<input type="submit" value="Submit" class=" btn btn-secondary">
+
+</html>
+{% endblock %}

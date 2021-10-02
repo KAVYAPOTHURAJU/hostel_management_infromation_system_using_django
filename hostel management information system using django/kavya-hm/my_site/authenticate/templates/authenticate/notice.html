@@ -1,0 +1,112 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <style>
+      #hostel{
+  font-family:  sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#hostel td, #hostel th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+h4{
+    color:blue;
+    background-color:grey;
+}
+h4 :hover{
+    background-color: #ddd;
+}
+#hostel tr:nth-child(even){background-color:cream;}
+
+#hostel tr:hover {background-color: #ddd;}
+
+#hostel th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:blue;
+  color: white;
+}
+</style>
+</head>
+<body>
+<head>
+    <title>Availability of rooms</title>
+    <style>
+        
+h5{color:white;
+background-color:black;
+width:6cm;
+}
+th {
+  height: 60px;
+  color:white;
+  background-color: blue;
+
+}
+body {
+  background-image: url('https://cdn.glitch.com/44a9535b-74cb-4fb2-b5c3-24c7c7eb73a2%2FScreenshot%20(176).png?v=1625902624108');
+
+
+  background-size:cover;
+  font-family: sans-serif;
+}
+.demo
+{
+background-color : white;
+}
+ .trail{
+        color:blue;
+        background-color:white ;
+      }
+      tr:nth-child(even) {
+			background-color: Lightblue;
+		} 
+    </style>
+  </head>
+<form method ="POST">
+  {% csrf_token %}
+  <br><br><br><br><br>
+
+<hr/>
+<div class ="trail">
+<marquee behavior="scroll" direction="right"><b>To view notices from admin type your  username  and click search </b> </marquee>
+</div>
+    <div class="demo">
+<input type = "text" placeholder="Enter your username" name="Username" required>
+<input type = "submit" value="Search" class="btn btn-secondary" required />
+<table border ="1" id=hostel>
+    <tr>
+        <th>Username</th>
+        <th>Room_no </th>
+        <th>Block_no </th>
+        <th>Notice_from_admin</th>
+        
+        
+        </tr>
+        {% for  n in noticeinfo %}
+        <tr>
+            <td><b>{{n.Username}}</b></td>
+            <td><b>{{n.Room_no}}</b></td>
+            <td><b>{{n.Block_no}}</b></td>
+            <td><b>{{n.Notice_from_admin }}</b></td>
+            
+           
+            
+        </tr>
+             {% endfor %}
+    </form>
+</table>
+<br>
+
+
+    
+ 
+</html>
+{% endblock %}
